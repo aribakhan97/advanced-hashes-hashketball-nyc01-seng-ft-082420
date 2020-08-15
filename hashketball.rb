@@ -166,13 +166,9 @@ end
   end
 
 def player_stats(player_n)
-  game_hash.each do |teams, k|
-    binding.pry
-     k [:players].each do |player|
-      if player[:player_name] == player_n
-        return player.delete_if {|stat, value|
-  [:player_name].include?(stat)}
-      end
+  game_hash.each do |teams, array|
+    array[:players].each do |player|
+      return player if player[:player_name] == player_n
     end
   end
 end
