@@ -1,5 +1,5 @@
 # Write your code below game_hash
-#require 'pry'
+require 'pry'
 def game_hash
   {
     home: {
@@ -166,9 +166,9 @@ end
   end
 
 def player_stats(player_n)
-  game_hash.each do |teams, array|
-    #binding.pry
-     array [:players].each do |player|
+  game_hash.each do |teams, k|
+    binding.pry
+     k [:players].each do |player|
       if player[:player_name] == player_n
         return player.delete_if {|stat, value|
   [:player_name].include?(stat)}
